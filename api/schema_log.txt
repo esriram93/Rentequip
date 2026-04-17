@@ -1,0 +1,76 @@
+
+Table: admins
+  id (int(11))
+  email (varchar(100))
+  password (varchar(255))
+  created_at (timestamp)
+
+Table: bookings
+  id (int(11))
+  user_id (int(11))
+  equipment_id (int(11))
+  check_in_date (date)
+  check_out_date (date)
+  total_amount (decimal(10,2))
+  advance_amount (decimal(10,2))
+  status (varchar(50))
+  created_at (timestamp)
+
+Table: customers
+  id (int(11))
+  name (varchar(100))
+  email (varchar(100))
+  phone (varchar(15))
+  created_at (timestamp)
+
+Table: equipment
+  id (int(11))
+  name (varchar(255))
+  description (text)
+  highlights (text)
+  price_per_day (decimal(10,2))
+  image_url (varchar(255))
+  is_available (tinyint(1))
+  category (varchar(100))
+  location (varchar(100))
+  availability (tinyint(1))
+
+Table: equipment2
+  id (int(11))
+  name (varchar(100))
+  category (varchar(50))
+  price_per_day (decimal(10,2))
+  availability (tinyint(1))
+  created_at (timestamp)
+
+Table: favorites
+  fav_id (int(11))
+  user_id (int(11))
+  equipment_id (int(11))
+  created_at (timestamp)
+
+Table: notifications
+  id (int(11))
+  user_id (int(11))
+  title (varchar(100))
+  message (text)
+  is_read (tinyint(1))
+  created_at (timestamp)
+
+Table: payments
+  id (int(11))
+  booking_id (int(11))
+  user_id (int(11))
+  amount (decimal(10,2))
+  payment_method (varchar(50))
+  payment_status (varchar(20))
+  created_at (timestamp)
+  transaction_id (varchar(100))
+
+Table: users
+  id (int(11))
+  name (varchar(255))
+  email (varchar(255))
+  password (varchar(255))
+  role (varchar(50))
+  mobile (varchar(15))
